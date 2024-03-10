@@ -3,23 +3,16 @@
 
 int main(void)
 {
-    float start, end, increment,fahrenheit, celsius;
+    float start, end, increment, pounds, kilograms, miles, kilometers;
 
-    printf(" Enter the starting Fahrenheit value: ");
-    scanf("%f", &end);
+    printf("Pounds to Kilograms Conversion Table\n");
+    printf("------------------------------------\n");
+    printf("Pounds\t\tKilograms\n");
 
-    printf("Enter the increment value: ");
-    scanf("%f", &increment);
-
-    printf("\nFahrenheit to Celsius Conversion Table\n");
-    printf("--------------------------------------\n");
-    printf("Fahrenheit\tCelsius\n");
-
-    for (fahrenheit = start; fahrenheit <= end; fahrenheit += increment)
+    for (pounds = 0; pounds <= 100; pounds += 10)
     {
-        celsius = (fahrenheit - 32.0) *5.0 / 9.0;
-        printf("%6.2f\t\t%6.2f\n", fahrenheit, celsius);
+        kilograms = pounds * 2.20462262;
+        printf("%6.2f\t\t%6.2f\n", pounds, kilograms);
     }
-
     return 0;
 }
