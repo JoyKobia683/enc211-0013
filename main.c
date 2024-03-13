@@ -1,18 +1,37 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(void)
+int main()
+
 {
-    float start, end, increment, pounds, kilograms, miles, kilometers;
+   int a[5];
+   void bubble_sort(){
+       for (int i = 0; i < 5; i++){
+           for(int j = 0; j < 5 - i - 1; j++) {
+               if (a[j] > a[j + 1]) {
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                  }
+                }
+              }
+            }
+int main() {
+    srand(time(NULL));
+    for (int i = 0; i < 5; a[i++] = rand() % 100);
 
-    printf("Pounds to Kilograms Conversion Table\n");
-    printf("------------------------------------\n");
-    printf("Pounds\t\tKilograms\n");
+    printf("Original Array: ");
+    for (int i = 0; i < 5; printf("%d ", a[i++]));
 
-    for (pounds = 0; pounds <= 100; pounds += 10)
-    {
-        kilograms = pounds * 2.20462262;
-        printf("%6.2f\t\t%6.2f\n", pounds, kilograms);
-    }
+    bubble_sort();
+
+
+    printf("\nSorted Array : ");
+    for (int i = 0; i < 5; printf("%d ", a[i++]));
+
+
+   }
     return 0;
+
+
 }
