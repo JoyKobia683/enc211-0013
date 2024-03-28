@@ -1,44 +1,44 @@
 #include <stdio.h>
 #include <stdlib.h>
-typedef struct {
-    int id;
-    char name[20];
-} Record;
+
+# define ARRAY_SIZE 5
+
+int a [ARRAY_SIZE];
+
+void bubble_sort() {
+    for (int i = 0; i< ARRAY_SIZE; i++) {
+            for (int j = 0; j < ARRAY_SIZE - i - 1; j++) {
+                    if (a[j] > a[j + 1]) {
+                        int temp = a[j];
+                        a[j] = a[j + 1];
+                        a[j + 1] = temp;
+                    }
+            }
+    }
+}
+
+void get_user_input() {
+    printf("Enter %d integers : \n", ARRAY_SIZE);
+    for (int i = 0; i < ARRAY_SIZE; scanf("%d", &a[i++]));
+}
 
 int main() {
-    // Typecasting examples
-    int a = 10;
-    float b = 3.5;
-    char c ='A';
+    srand(time(NULL));
+    get_user_input();
 
-    float result1 = (float)a / 3;
-    int result2 = (int)b * 2;
-    char result3 = (char)(c + 1);
+    printf("Original Array: ");
+    for (int i = 0; i < ARRAY_SIZE; printf("%d", a[i++]));
 
-    printf("Typecasting examples:\n");
-    printf("Result 1: %f\n", result1);
-    printf("Result 2: %d\n", result2);
-    printf("Result 3: %c\n", result3);
+    bubble_sort();
 
-    // Array of records
-    Record records[5] = {{3, "MARVIN"},{1, "MWENDE"}, {4,"NANCY"}, {2,"MORRIS"}, {5, "JOY"}};
-
-    // Bubble sort based on the id field
-    for (int i = 0; i < 5; i++) {
-         for (int j = 0; j < 5 - i - 1; j++) {
-              if (records[j].id > records[j + 1].id) {
-                  Record temp = records[j];
-                  records[j] = records[j + 1];
-                  records[j + 1] = temp;
-              }
-         }
-    }
-
-    // Display sorted records
-    printf("\nSorted Records based on ID:\n");
-    for (int i = 0; i < 5; i++) {
-         printf("ID: %d, Name: %5\n", records[i].id, records[i].name);
-    }
+    printf("\nSorted Array: ");
+    for (int i = 0; i < ARRAY_SIZE; printf("%d", a[i++]));
 
     return 0;
 }
+
+
+
+
+
+
